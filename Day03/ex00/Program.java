@@ -4,7 +4,7 @@ public class Program extends Thread {
     private String message;
     private static final String arg = "--count=";
     private static final String error = "Error: bad argument";
-    private static int num = 0;
+    private static final String error2 = "Error: failed to join";
 
     public static void main(String[] args) {
 
@@ -14,35 +14,27 @@ public class Program extends Thread {
         }
 
         String str = args[0].replaceAll(arg, "");
-
+        Integer num = 0;
         try {
             num = Integer.parseInt(str);
         } catch (NumberFormatException e) {
             System.err.println(error);
             System.exit(-1);
         }
-        Program thread1 = new Program();
-        Program thread2 = new Program();
-
-        thread1.message = "EGG";
-        thread2.message = "HEN";
+        PrintThread thread1 = new PrintThread("EGG", num);
+        PrintThread thread2 = new PrintThread("HEN", num);
         thread1.start();
         thread2.start();
         try {
             thread1.join();
             thread2.join();
         } catch (Exception e) {
-            System.out.println("ERROR");
+            System.err.println(error2);
+            System.exit(-1);
         }
 
         for (int i = 1; i <= num; i++) {
             System.out.println("HUMAN");
-        }
-    }
-
-    public void run() {
-        for (int i = 1; i <= num; i++) {
-            System.out.println(message);
         }
     }
 }
