@@ -1,3 +1,4 @@
+package Day00.ex04;
 import java.util.*;
 
 public class Program {

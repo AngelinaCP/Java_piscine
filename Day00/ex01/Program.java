@@ -1,3 +1,4 @@
+package Day00.ex00;
 import java.util.*;
 import java.lang.*;
 

@@ -1,3 +1,4 @@
+package Day00.ex02;
 import java.util.*;
 
 public class Program {
@@ -15,7 +16,6 @@ public class Program {
                 return false;
             }
         }
-        System.out.println("COU");
         return true;
     }
 
@@ -32,7 +32,7 @@ public class Program {
                 num /= 10;
             }
             sum += num;
-            if (isPrime(sum) == true)
+            if (isPrime(sum))
                 count ++;
             num = scanner.nextInt();
         }
