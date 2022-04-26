@@ -1,0 +1,2 @@
+./src/java/edu/school21/printer/app/Program.java
+./src/java/edu/school21/printer/logic/ImagesToChar.java

@@ -30,8 +30,6 @@ public class Program {
         char white = args[0].charAt(0);
         char black = args[1].charAt(0);
         String path = args[2];
-        Integer x = 0;
-        Integer y = 0;
         try (FileInputStream input = new FileInputStream(path)) {
             Logic image = new Logic(input, white, black);
             for (int i = 0; i < image.getHeight(); i++){
